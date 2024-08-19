@@ -12,4 +12,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Print next one message
-        run: echo 'Workflow précédent terminé, maintenant c\'est au tour de celui-ci'
+        run: echo 'Workflow 1 terminé, lancement workflow 2'

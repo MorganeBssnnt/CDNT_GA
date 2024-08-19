@@ -1,0 +1,24 @@
+name: Pull or Push
+
+on:
+  push:
+  pull_request:
+
+env:
+  PUSH_MESSAGE: "C'est un push !"
+  PULL_REQUEST_MESSAGE: "C'est une pull request !"
+
+jobs:
+  check-push:
+    if: github.event_name == 'push'
+    runs-on: windows-latest
+    steps:
+      - name: Print push message
+        run: echo "$PUSH_MESSAGE"
+
+  check-pull-request:
+    if: github.event_name == 'pull_request'
+    runs-on: windows-latest
+    steps:
+      - name: Print pull request message
+        run: echo "$PULL_REQUEST_MESSAGE"

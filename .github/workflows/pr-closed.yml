@@ -1,0 +1,14 @@
+# .github/workflows/pr-closed.yml
+name: Pull Request Closed
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  pr-status:
+    if: github.event.pull_request.merged == true
+    runs-on: windows-latest
+    steps:
+      - name: Print PR merged message
+        run: echo 'La pull request a été fusionnée'

@@ -1,0 +1,13 @@
+# .github/workflows/issue-created.yml
+name: Issue Created
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  issue-message:
+    runs-on: windows-latest
+    steps:
+      - name: Print issue created message
+        run: echo 'issue créée'

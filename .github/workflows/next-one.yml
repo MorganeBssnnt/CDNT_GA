@@ -1,0 +1,15 @@
+# .github/workflows/next-one.yml
+name: Next One
+
+on:
+  workflow_run:
+    workflows: ["Pull Request Closed"]
+    types:
+      - completed
+
+jobs:
+  next-message:
+    runs-on: windows-latest
+    steps:
+      - name: Print next one message
+        run: echo 'Workflow 1 terminé, lancement workflow 2'

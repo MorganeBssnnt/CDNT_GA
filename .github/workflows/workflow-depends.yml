@@ -1,0 +1,19 @@
+# .github/workflows/workflow-depends.yml
+name: Workflow Depends
+
+on:
+  workflow_dispatch: # Permet de lancer le workflow manuellement
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print first job message
+        run: echo 'Premier job exécuté'
+
+  job2:
+    runs-on: windows-latest
+    needs: job1
+    steps:
+      - name: Print second job message
+        run: echo 'Deuxième job exécuté après le premier'

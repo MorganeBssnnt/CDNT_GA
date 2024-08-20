@@ -13,14 +13,17 @@ jobs:
       - name: Define fruits and names
         id: define_lists
         run: |
-          $env:FRUITS = "pomme,banane,orange,fraise"
-          $env:NAMES = "Michel,Paul,Claire"
+          echo "FRUITS=pomme,banane,orange,fraise" >> $env:GITHUB_ENV
+          echo "NAMES=Michel,Jeanne" >> $env:GITHUB_ENV
 
       - name: Generate and display combinations
+        shell: pwsh
         run: |
+          # Split the environment variables into arrays
           $fruits = $env:FRUITS -split ","
           $names = $env:NAMES -split ","
 
+          # Generate and display all combinations
           foreach ($name in $names) {
             foreach ($fruit in $fruits) {
               Write-Output "$name mange une $fruit, et il adore ça !"

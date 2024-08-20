@@ -14,7 +14,7 @@ jobs:
         id: define_lists
         run: |
           echo "FRUITS=pomme,banane,orange,fraise" >> $env:GITHUB_ENV
-          echo "NAMES=Michel,Jeanne" >> $env:GITHUB_ENV
+          echo "NAMES=Michel,Jean" >> $env:GITHUB_ENV
 
       - name: Generate and display combinations
         shell: pwsh
